@@ -6,7 +6,7 @@ for i in range(len(mw)):
 zk = 0
 cnt = 0
 
-def rotate():
+def simul():
     global zk
     global k
     #회전
@@ -19,9 +19,6 @@ def rotate():
     mw[0][1] = lastP
     # print("rotate : ", mw)
 
-def Test1():
-    global zk
-    global k
     #0번 칸에 사람 올리기
     if mw[0][1] == 0 and mw[0][0] != 0:
         mw[0][1] = 1
@@ -29,9 +26,6 @@ def Test1():
     if mw[n - 1][0] == 0:
         zk += 1
 
-def Test2():
-    global zk
-    global k
     #앞으로 가기
     for i in range(n - 1, 1, -1):
         if mw[i][0] != 0 and mw[i][1] == 0:
@@ -43,10 +37,6 @@ def Test2():
     if mw[n - 1][0] == 0:
         zk += 1
     
-
-def Test3():
-    global zk
-    global k
     #0번 칸에 사람 올리기
     if mw[0][1] == 0 and mw[0][0] != 0:
         mw[0][1] = 1
@@ -58,9 +48,6 @@ def Test3():
 
 
 while zk < k:
-    rotate()
-    Test1()
-    Test2()
-    Test3()
+    simul()
     cnt += 1
 print(cnt)

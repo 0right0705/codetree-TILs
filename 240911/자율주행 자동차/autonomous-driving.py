@@ -3,8 +3,6 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 x,y,d = map(int, input().split())
-x, y = x, y #그래프는 0부터 시작하기 때문
-d = 3 - d
 graph = [list(map(int, input().split())) for _ in range(n)]
 mx = [-1, 0, 1, 0] #서남동북
 my = [0, 1, 0, -1] #서남동북

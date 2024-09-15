@@ -43,17 +43,11 @@ def checkRight(n): #n번쨰의 오른쪽 테이블 돌릴지 말지 체크
 
 tc = int(input())
 for z in range(tc):
-    
     n, k = map(int, input().split())
     n -= 1
-
-    #여기부터 회전하고 확인하는 코드 채우기
     rt = []
 
-
     if n == 0:
-        # if checkLeft(n+1) == True or checkRight(n-1):
-        #     rt.append([n, k])
         if checkRight(0) == True:
             rt.append([1, -k])
             if checkRight(n+1) == True:
@@ -61,18 +55,14 @@ for z in range(tc):
                 if checkRight(n+2) == True:
                     rt.append([n+3, -k])
 
-    if n == 4:
-        # if checkLeft(n+1) == True or checkRight(n-1):
-        #     rt.append([n, k])
-        if checkRight(n) == True:
+    if n == 3:
+        if checkLeft(n) == True:
             rt.append([n-1, -k])
-            if checkRight(n+1) == True:
+            if checkLeft(n-1) == True:
                 rt.append([n-2, k])
-                if checkRight(n+2) == True:
+                if checkLeft(n-2) == True:
                     rt.append([n-3, -k])
     if n == 1:
-        # if checkLeft(n+1) == True or checkRight(n-1):
-        #     rt.append([n, k])
         if checkLeft(n) == True:
             rt.append([n-1,-k])
         if checkRight(n) == True:
@@ -80,8 +70,6 @@ for z in range(tc):
             if checkRight(n+1) == True:
                 rt.append([n+2,k])
     if n == 2:
-        # if checkLeft(n+1) == True or checkRight(n-1):
-        #     rt.append([n, k])
         if checkLeft(n) == True:
             rt.append([n-1,-k])
             if checkLeft(n-1) == True:

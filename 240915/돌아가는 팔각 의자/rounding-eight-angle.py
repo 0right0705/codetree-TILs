@@ -52,8 +52,8 @@ for z in range(tc):
 
 
     if n == 0:
-        if checkLeft(n+1) == True or checkRight(n-1):
-            rt.append([n, k])
+        # if checkLeft(n+1) == True or checkRight(n-1):
+        #     rt.append([n, k])
         if checkRight(0) == True:
             rt.append([1, -k])
             if checkRight(n+1) == True:
@@ -62,8 +62,8 @@ for z in range(tc):
                     rt.append([n+3, -k])
 
     if n == 4:
-        if checkLeft(n+1) == True or checkRight(n-1):
-            rt.append([n, k])
+        # if checkLeft(n+1) == True or checkRight(n-1):
+        #     rt.append([n, k])
         if checkRight(n) == True:
             rt.append([n-1, -k])
             if checkRight(n+1) == True:
@@ -71,23 +71,24 @@ for z in range(tc):
                 if checkRight(n+2) == True:
                     rt.append([n-3, -k])
     if n == 1:
-        if checkLeft(n+1) == True or checkRight(n-1):
-            rt.append([n, k])
-            if checkLeft(n) == True:
-                rt.append([n-1,-k])
+        # if checkLeft(n+1) == True or checkRight(n-1):
+        #     rt.append([n, k])
+        if checkLeft(n) == True:
+            rt.append([n-1,-k])
         if checkRight(n) == True:
             rt.append([n+1,-k])
             if checkRight(n+1) == True:
                 rt.append([n+2,k])
     if n == 2:
-        if checkLeft(n+1) == True or checkRight(n-1):
-            rt.append([n, k])
-            if checkLeft(n) == True:
-                rt.append([n-1,-k])
-                if checkLeft(n-1) == True:
-                    rt.append([n-2, k])
+        # if checkLeft(n+1) == True or checkRight(n-1):
+        #     rt.append([n, k])
+        if checkLeft(n) == True:
+            rt.append([n-1,-k])
+            if checkLeft(n-1) == True:
+                rt.append([n-2, k])
         if checkRight(n) == True:
             rt.append([n+1,-k])
+    rotate(n, k)
     for rotation in rt:
         rotate(rotation[0], rotation[1])
 

@@ -62,7 +62,7 @@ for turn in range(101):
     r -= 1
     c -= 1
 
-    if 0<= tr< r and 0<=tc<c and board[tr][tc] == tk:
+    if 0<= tr <= r and 0<= tc <= c and board[tr][tc] == tk:
         ans = turn
         break
 
@@ -81,5 +81,5 @@ for turn in range(101):
         ret1 = [[0] * n for _ in range(len(ret[n-1]))]
         ret1 = makeRealWay(ret,n,ret1)
         board = ret1
-            
+    
 print(ans)

@@ -55,7 +55,7 @@ tr -= 1
 tc -= 1
 
 r,c = 0,0
-ans = 0
+ans = -1
 for turn in range(101):
     c = len(board[0])
     r = len(board)

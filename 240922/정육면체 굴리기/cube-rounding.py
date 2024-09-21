@@ -1,5 +1,3 @@
-import sys
-input = sys.stdin.readline
 n,m,x,y,k = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(n)]
 way = list(map(int, input().split()))
@@ -8,7 +6,7 @@ dice = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 def east():
     global x,y,graph
 
-    if x >= m:
+    if x + 1 >= m:
         return False
     else:
         x += 1

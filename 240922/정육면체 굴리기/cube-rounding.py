@@ -1,4 +1,4 @@
-n,m,x,y,k = map(int, input().split())
+n,m,y,x,k = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(n)]
 way = list(map(int, input().split()))
 dice = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
@@ -108,8 +108,12 @@ def south():
 
         return [y,x]
 
+if graph[y][x] == 0:
+    graph[y][x] = dice[2][2]
+else:
+    dice[2][2] = graph[y][x]
+    graph[y][x] = 0
 for i in way:
-    
     if i == 1:
         result = east()
         if result != False:

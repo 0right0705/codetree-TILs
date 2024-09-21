@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 n,m,x,y,k = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(n)]
 way = list(map(int, input().split()))
